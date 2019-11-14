@@ -1,0 +1,906 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: 微軟正黑體;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wrap {
+  margin: 100px auto;
+}
+
+.main {
+  width: 800px;
+  position: relative;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.coffeeCup-bg {
+  width: 600px;
+  z-index: 100;
+}
+
+.coffe {
+  margin: 5px;
+}
+
+.coffe-grout1,
+.coffe-grout2 {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.coffeeCup-bg-boss::before {
+  position: absolute;
+  content: '';
+  background-image: url(../img/coffeeCup-bg-NoActive.png);
+  background-position: bottom center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: 130px;
+  left: 176px;
+  width: 179px;
+  height: 179px;
+  z-index: 101;
+}
+
+.coffeeCup-bg-boss::after {
+  position: absolute;
+  content: '';
+  background-image: url(../img/coffeeCup-bg-active.png);
+  background-position: bottom center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: 130px;
+  left: 194px;
+  width: 179px;
+  height: 179px;
+  z-index: 102;
+  display: none;
+}
+
+.coffeeCup-bg-boss:hover::after {
+  display: block;
+}
+
+.coffeeCup-bg-message::before {
+  position: absolute;
+  content: '這次想喝點什麼呢？';
+  width: 200px;
+  height: 50px;
+  background: #613030;
+  top: -14px;
+  left: 60px;
+  z-index: 110;
+  font-size: 18px;
+  text-align: left;
+  line-height: 1.2rem;
+  padding: 15px;
+  color: #ffffff;
+  border-radius: 15px;
+  display: none;
+}
+
+.coffeeCup-bg-message::after {
+  position: absolute;
+  top: 35px;
+  background: #ffffff;
+  z-index: 110;
+  border-color: #613030 #613030 transparent transparent;
+  border-style: solid solid solid solid;
+  border-width: 12px 12px 12px 12px;
+  content: "";
+  height: 0px;
+  left: 180px;
+  width: 0px;
+  display: none;
+}
+
+.coffeeCup-bg-message:hover::before {
+  display: block;
+}
+
+.coffeeCup-bg-message:hover::after {
+  display: block;
+}
+
+.coffe-Boss-action::before {
+  position: absolute;
+  content: '';
+  background-image: url(../img/coffeeCup-bg-active.png);
+  background-position: bottom center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: 130px;
+  left: 194px;
+  width: 179px;
+  height: 179px;
+  z-index: 102;
+  display: none;
+}
+
+.coffe-Boss-action:hover::before {
+  display: block;
+}
+
+.esplesso {
+  padding: 5px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #613030;
+  border: 3px solid #613030;
+  color: #ffffff;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.esplesso::before {
+  position: absolute;
+  content: "濃縮咖啡";
+  width: 150px;
+  height: 2px;
+  background: #000000;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 45;
+  text-align: center;
+  line-height: 45px;
+  overflow: hidden;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+.esplesso:hover {
+  background: #ffffff;
+  color: #613030;
+}
+
+.esplesso:hover::before {
+  height: 50px;
+  line-height: 45px;
+}
+
+.americano {
+  padding: 5px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #613030;
+  border: 3px solid #613030;
+  color: #ffffff;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.americano::before {
+  position: absolute;
+  content: "濃縮咖啡";
+  width: 150px;
+  height: 2px;
+  background: #000000;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 45;
+  text-align: center;
+  line-height: 45px;
+  overflow: hidden;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+.americano::after {
+  position: absolute;
+  content: "水";
+  width: 150px;
+  height: 2px;
+  background: #4796db;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 1;
+  text-align: center;
+  line-height: 165px;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  overflow: hidden;
+  z-index: 40;
+}
+
+.americano:hover {
+  background: #ffffff;
+  color: #613030;
+}
+
+.americano:hover::before {
+  height: 50px;
+  line-height: 45px;
+}
+
+.americano:hover::after {
+  height: 195px;
+  line-height: 165px;
+}
+
+.caffeLatte::before {
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  content: "濃縮咖啡";
+  width: 150px;
+  height: 2px;
+  background: #000000;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 45;
+  text-align: center;
+  line-height: 45px;
+  overflow: hidden;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+.caffeLatte::after {
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  content: "牛奶";
+  width: 150px;
+  height: 2px;
+  background: #b4be8a;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 1;
+  text-align: center;
+  line-height: 90px;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  overflow: hidden;
+  z-index: 40;
+}
+
+.caffeLatte:hover::before {
+  height: 50px;
+  line-height: 45px;
+}
+
+.caffeLatte:hover::after {
+  height: 135px;
+  line-height: 90px;
+}
+
+.caffeLatte2 {
+  padding: 5px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #613030;
+  border: 3px solid #613030;
+  color: #ffffff;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.caffeLatte2:hover {
+  background: #ffffff;
+  color: #613030;
+}
+
+.caffeLatte2::before {
+  position: absolute;
+  content: "奶泡";
+  width: 150px;
+  height: 2px;
+  background: #b2a2ad;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 35;
+  overflow: hidden;
+  text-align: center;
+  line-height: 80px;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+.caffeLatte2:hover::before {
+  height: 195px;
+  line-height: 80px;
+}
+
+.cappuccino::before {
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  content: "濃縮咖啡";
+  width: 150px;
+  height: 2px;
+  background: #000000;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 45;
+  text-align: center;
+  line-height: 45px;
+  overflow: hidden;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+.cappuccino::after {
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  content: "牛奶";
+  width: 150px;
+  height: 2px;
+  background: #b4be8a;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 1;
+  text-align: center;
+  line-height: 40px;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  overflow: hidden;
+  z-index: 40;
+}
+
+.cappuccino:hover::before {
+  height: 50px;
+  line-height: 45px;
+}
+
+.cappuccino:hover::after {
+  height: 90px;
+  line-height: 40px;
+}
+
+.cappuccino2 {
+  padding: 5px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #613030;
+  border: 3px solid #613030;
+  color: #ffffff;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.cappuccino2:hover {
+  background: #ffffff;
+  color: #613030;
+}
+
+.cappuccino2::before {
+  position: absolute;
+  content: "奶泡";
+  width: 150px;
+  height: 2px;
+  background: #b2a2ad;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 35;
+  overflow: hidden;
+  text-align: center;
+  line-height: 130px;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+.cappuccino2:hover::before {
+  height: 195px;
+  line-height: 130px;
+}
+
+.caffeMocha::before {
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  content: "濃縮咖啡";
+  width: 150px;
+  height: 2px;
+  background: #000000;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 45;
+  text-align: center;
+  line-height: 45px;
+  overflow: hidden;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+.caffeMocha::after {
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  content: "巧克力糖漿";
+  width: 150px;
+  height: 2px;
+  background: #8c721c;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 1;
+  text-align: center;
+  line-height: 40px;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  overflow: hidden;
+  z-index: 40;
+}
+
+.caffeMocha:hover::before {
+  height: 50px;
+  line-height: 45px;
+}
+
+.caffeMocha:hover::after {
+  height: 80px;
+  line-height: 30px;
+}
+
+.caffeMocha2 {
+  padding: 5px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #613030;
+  border: 3px solid #613030;
+  color: #ffffff;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.caffeMocha2::before {
+  position: absolute;
+  content: "牛奶";
+  width: 150px;
+  height: 2px;
+  background: #b2a2ad;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 35;
+  overflow: hidden;
+  text-align: center;
+  line-height: 70px;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+.caffeMocha2::after {
+  position: absolute;
+  content: "鮮奶油";
+  width: 150px;
+  height: 2px;
+  background: #eea04e;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 30;
+  overflow: hidden;
+  text-align: center;
+  line-height: 75px;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+.caffeMocha2:hover {
+  background: #ffffff;
+  color: #613030;
+}
+
+.caffeMocha2:hover::before {
+  height: 140px;
+  line-height: 65px;
+}
+
+.caffeMocha2:hover::after {
+  height: 195px;
+  line-height: 75px;
+}
+
+.macchiato {
+  padding: 5px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #613030;
+  border: 3px solid #613030;
+  color: #ffffff;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.macchiato::before {
+  position: absolute;
+  content: "濃縮咖啡";
+  width: 150px;
+  height: 2px;
+  background: #000000;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 45;
+  text-align: center;
+  line-height: 45px;
+  overflow: hidden;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+.macchiato::after {
+  position: absolute;
+  content: "奶泡";
+  width: 150px;
+  height: 2px;
+  background: #b2a2ad;
+  color: #ffffff;
+  bottom: 165px;
+  left: 360px;
+  z-index: 1;
+  text-align: center;
+  line-height: 35px;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  overflow: hidden;
+  z-index: 40;
+}
+
+.macchiato:hover {
+  background: #ffffff;
+  color: #613030;
+}
+
+.macchiato:hover::before {
+  height: 50px;
+  line-height: 45px;
+}
+
+.macchiato:hover::after {
+  height: 85px;
+  line-height: 35px;
+}
+
+.coffe-text {
+  font-size: 12px;
+  text-align: center;
+  padding-top: 3px;
+}
+
+.esplesso-message::before {
+  position: absolute;
+  content: 'Espresso 是義大利文，意思是為「馬上為您現煮咖啡」。在目前的全球咖啡市場裡，義式咖啡可以說是最大的主流。';
+  width: 280px;
+  height: 90px;
+  background: #613030;
+  top: -25px;
+  left: 40px;
+  z-index: 110;
+  font-size: 13px;
+  text-align: left;
+  line-height: 1.2rem;
+  padding: 15px;
+  color: #ffffff;
+  border-radius: 15px;
+  display: none;
+}
+
+.esplesso-message::after {
+  position: absolute;
+  top: 65px;
+  background: #ffffff;
+  z-index: 110;
+  border-color: #613030 #613030 transparent transparent;
+  border-style: solid solid solid solid;
+  border-width: 12px 12px 12px 12px;
+  content: "";
+  height: 0px;
+  left: 190px;
+  width: 0px;
+  display: none;
+}
+
+.esplesso-message:hover::before {
+  display: block;
+}
+
+.esplesso-message:hover::after {
+  display: block;
+}
+
+.americano-message::before {
+  position: absolute;
+  content: '美式咖啡名稱來自戰爭時期在歐洲的美軍軍人，將熱水兌進歐洲常見的小份濃縮咖啡的習慣，這種方法很快隨著美國連鎖店在世界上的普及而流行開。';
+  width: 280px;
+  height: 110px;
+  background: #613030;
+  top: -45px;
+  left: 40px;
+  z-index: 110;
+  font-size: 13px;
+  text-align: left;
+  line-height: 1.2rem;
+  padding: 15px;
+  color: #ffffff;
+  border-radius: 15px;
+  display: none;
+}
+
+.americano-message::after {
+  position: absolute;
+  top: 65px;
+  background: #ffffff;
+  z-index: 110;
+  border-color: #613030 #613030 transparent transparent;
+  border-style: solid solid solid solid;
+  border-width: 12px 12px 12px 12px;
+  content: "";
+  height: 0px;
+  left: 190px;
+  width: 0px;
+  display: none;
+}
+
+.americano-message:hover::before {
+  display: block;
+}
+
+.americano-message:hover::after {
+  display: block;
+}
+
+.Latte-message::before {
+  position: absolute;
+  content: '拿鐵咖啡，亦稱鮮奶咖啡，是諸多義大利式的拿鐵咖啡中的一種。在英語的世界裡，latte是caffè latte的簡稱，泛指由熱鮮奶所沖泡的飲品。';
+  width: 280px;
+  height: 105px;
+  background: #613030;
+  top: -40px;
+  left: 40px;
+  z-index: 110;
+  font-size: 13px;
+  text-align: left;
+  line-height: 1.2rem;
+  padding: 15px;
+  color: #ffffff;
+  border-radius: 15px;
+  display: none;
+}
+
+.Latte-message::after {
+  position: absolute;
+  top: 65px;
+  background: #ffffff;
+  z-index: 110;
+  border-color: #613030 #613030 transparent transparent;
+  border-style: solid solid solid solid;
+  border-width: 12px 12px 12px 12px;
+  content: "";
+  height: 0px;
+  left: 190px;
+  width: 0px;
+  display: none;
+}
+
+.Latte-message:hover::before {
+  display: block;
+}
+
+.Latte-message:hover::after {
+  display: block;
+}
+
+.cappuccino-message::before {
+  position: absolute;
+  content: '和拿鐵的不同之處就在於牛奶的量，由於咖啡最後呈現的色澤，和聖方濟會修士的褐色斗篷Cappuccino十分相似，因此就取了和斗篷一樣的名字，卡布奇諾咖啡因此得名。';
+  width: 280px;
+  height: 105px;
+  background: #613030;
+  top: -40px;
+  left: 40px;
+  z-index: 110;
+  font-size: 13px;
+  text-align: left;
+  line-height: 1.2rem;
+  padding: 15px;
+  color: #ffffff;
+  border-radius: 15px;
+  display: none;
+}
+
+.cappuccino-message::after {
+  position: absolute;
+  top: 65px;
+  background: #ffffff;
+  z-index: 110;
+  border-color: #613030 #613030 transparent transparent;
+  border-style: solid solid solid solid;
+  border-width: 12px 12px 12px 12px;
+  content: "";
+  height: 0px;
+  left: 190px;
+  width: 0px;
+  display: none;
+}
+
+.cappuccino-message:hover::before {
+  display: block;
+}
+
+.cappuccino-message:hover::after {
+  display: block;
+}
+
+.caffeMocha-message::before {
+  position: absolute;
+  content: '摩卡原本是指一種具有巧克力香氣的咖啡豆，這種咖啡豆主要由葉門的沿海小鎮摩卡出產，因此就叫摩卡豆。現今一般指的摩卡咖啡，則是由濃縮咖啡、熱巧克力、牛奶為比例調製出的咖啡。';
+  width: 280px;
+  height: 125px;
+  background: #613030;
+  top: -60px;
+  left: 40px;
+  z-index: 110;
+  font-size: 13px;
+  text-align: left;
+  line-height: 1.2rem;
+  padding: 15px;
+  color: #ffffff;
+  border-radius: 15px;
+  display: none;
+}
+
+.caffeMocha-message::after {
+  position: absolute;
+  top: 65px;
+  background: #ffffff;
+  z-index: 110;
+  border-color: #613030 #613030 transparent transparent;
+  border-style: solid solid solid solid;
+  border-width: 12px 12px 12px 12px;
+  content: "";
+  height: 0px;
+  left: 190px;
+  width: 0px;
+  display: none;
+}
+
+.caffeMocha-message:hover::before {
+  display: block;
+}
+
+.caffeMocha-message:hover::after {
+  display: block;
+}
+
+.macchiato-message::before {
+  position: absolute;
+  content: '是種使用少量牛奶或奶泡，再加上濃縮咖啡製作而成的咖啡飲料。瑪奇雅朵的意思是「標記」、「烙印」或「染色」，因此瑪琪雅朵咖啡的字面意思是以牛奶來上色的濃縮咖啡。';
+  width: 280px;
+  height: 125px;
+  background: #613030;
+  top: -60px;
+  left: 40px;
+  z-index: 110;
+  font-size: 13px;
+  text-align: left;
+  line-height: 1.2rem;
+  padding: 15px;
+  color: #ffffff;
+  border-radius: 15px;
+  display: none;
+}
+
+.macchiato-message::after {
+  position: absolute;
+  top: 65px;
+  background: #ffffff;
+  z-index: 110;
+  border-color: #613030 #613030 transparent transparent;
+  border-style: solid solid solid solid;
+  border-width: 12px 12px 12px 12px;
+  content: "";
+  height: 0px;
+  left: 190px;
+  width: 0px;
+  display: none;
+}
+
+.macchiato-message:hover::before {
+  display: block;
+}
+
+.macchiato-message:hover::after {
+  display: block;
+}
+/*# sourceMappingURL=all.css.map */
